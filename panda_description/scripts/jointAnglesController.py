@@ -6,7 +6,7 @@ from std_msgs.msg import Header
 
 def publish_joint_angles():
     pub = rospy.Publisher('/joint_states', JointState, queue_size=10)
-    rospy.init_node('joint_publisher', anonymous=True)
+    rospy.init_node('joint_state_publisher', anonymous=True)
     rate = rospy.Rate(10)
 
     joint_state = JointState()
