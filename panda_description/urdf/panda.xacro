@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<robot name="panda" xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <xacro:include filename="$(find panda_description)/urdf/common/common_materials.xacro"/>
+    <xacro:include filename="$(find panda_description)/urdf/panda_wrapper.xacro"/>
+    <!--xacro:include filename="$(find panda_description)/urdf/camera/camera_wrapper.xacro"/-->
+</robot>

@@ -1,10 +1,15 @@
 <?xml version="1"?>
 <launch>
-    <param name="robot_description" command= "$(find xacro)/xacro --inorder '$(find panda_description)/Panda/panda.xacro'"/>
-    <!--node name="joint_state_publisher" pkg="panda_description" type="jointAnglesController.py" output="screen"></node-->
-    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
-        <param name="use_gui" value="False"/>
-    </node>
+    <arg name="model" default="$(find panda_description)/urdf/project_wrapper.xacro"/>
+    <arg name="gui" default="true"/>
+    <arg name="rvizconfig" default="$(find panda_description)/rviz/panda.rviz"/>
+
+    <param name="robot_description" command="$(find xacro)/xacro $(arg model)"/>
+    
+    <node if="$(arg gui)" name="joint_state_publisher" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui"/>
+    <node unless="$(arg gui)" name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/>
+
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
-    <node name="rviz" pkg="rviz" type="rviz" args="-d /home/starslab_go/stars_lab_ws/panda_robot/src/panda_description/rviz/panda.rviz" output="screen"/>
+
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true"/>
 </launch>
