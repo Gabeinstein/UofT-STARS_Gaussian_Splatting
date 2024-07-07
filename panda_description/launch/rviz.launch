@@ -1,6 +1,6 @@
 <?xml version="1"?>
 <launch>
-    <arg name="model" default="$(find panda_description)/urdf/project_wrapper.xacro"/>
+    <arg name="model" default="$(find panda_description)/urdf/panda.xacro"/>
     <arg name="gui" default="true"/>
     <arg name="rvizconfig" default="$(find panda_description)/rviz/panda.rviz"/>
 

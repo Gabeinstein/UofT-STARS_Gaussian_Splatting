@@ -1,6 +1,20 @@
 <?xml version="1.0"?>
 <robot name="panda" xmlns:xacro="http://www.ros.org/wiki/xacro">
-    <xacro:include filename="$(find panda_description)/urdf/common/common_materials.xacro"/>
-    <xacro:include filename="$(find panda_description)/urdf/panda_wrapper.xacro"/>
-    <!--xacro:include filename="$(find panda_description)/urdf/camera/camera_wrapper.xacro"/-->
+    
+    <xacro:property name="PI" value="3.1415926535897931"/>
+    
+    <xacro:include filename="$(find panda_description)/urdf/panda.gazebo"/>
+    <xacro:include filename="$(find panda_description)/urdf/materials.xacro"/>
+    <xacro:include filename="$(find panda_description)/urdf/visuals.xacro"/>
+    <xacro:include filename="$(find panda_description)/urdf/camera.xacro"/>
+    <!--xacro:include filename="$(find panda_description)/urdf/transmission.xacro"/-->
+    
+
+    <link name="world"/>
+        
+    <joint name="fixed" type="fixed">
+        <parent link="world"/>
+        <child link="panda_link0"/>
+    </joint>
+
 </robot>
