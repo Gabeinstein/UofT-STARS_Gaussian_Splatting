@@ -7,11 +7,10 @@
     <xacro:include filename="$(find panda_description)/urdf/materials.xacro"/>
     <xacro:include filename="$(find panda_description)/urdf/visuals.xacro"/>
     <xacro:include filename="$(find panda_description)/urdf/camera.xacro"/>
-    <!--xacro:include filename="$(find panda_description)/urdf/transmission.xacro"/-->
+    <xacro:include filename="$(find panda_description)/urdf/transmission.xacro"/>
     
 
     <link name="world"/>
-        
     <joint name="fixed" type="fixed">
         <parent link="world"/>
         <child link="panda_link0"/>

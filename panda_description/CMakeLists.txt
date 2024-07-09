@@ -8,6 +8,9 @@ project(panda_description)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
+  urdf
+  controller_manager
+  joint_state_controller
   joint_state_publisher
   robot_state_publisher
   rviz
