@@ -21,9 +21,9 @@
     </visual>
 
     <inertial>
-      <mass value="1e-5" />
+      <mass value="1" />
       <origin xyz="0 0 0" rpy="0 0 0"/>
-      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+      <inertia ixx="0.05" ixy="0" ixz="0" iyy="0.05" iyz="0" izz="0.05" />
     </inertial>
   </link>
 

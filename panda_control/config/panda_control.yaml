@@ -6,36 +6,40 @@ panda:
   panda_joint1_position_controller:
     type: effort_controllers/JointPositionController
     joint: panda_joint1
-    pid: { p: 100, i: 0.1, d: 0 }
+    pid: { p: 170, i: 0.8, d: 5 }
   panda_joint2_position_controller:
     type: effort_controllers/JointPositionController
     joint: panda_joint2
-    pid: { p: 100, i: 0.1, d: 0 }
+    pid: { p: 170, i: 0.8, d: 5 }
   panda_joint3_position_controller:
     type: effort_controllers/JointPositionController
     joint: panda_joint3
-    pid: { p: 100, i: 0.1, d: 0 }
+    pid: { p: 170, i: 0.8, d: 5 }
   panda_joint4_position_controller:
     type: effort_controllers/JointPositionController
     joint: panda_joint4
-    pid: { p: 100, i: 0.1, d: 0 }
+    pid: { p: 170, i: 0.8, d: 5 }
   panda_joint5_position_controller:
     type: effort_controllers/JointPositionController
     joint: panda_joint5
-    pid: { p: 100, i: 0.1, d: 0 }
+    pid: { p: 170, i: 0.8, d: 5 }
   panda_joint6_position_controller:
     type: effort_controllers/JointPositionController
     joint: panda_joint6
-    pid: { p: 100, i: 0.1, d: 0 }
+    pid: { p: 170, i: 0.8, d: 5 }
   panda_joint7_position_controller:
     type: effort_controllers/JointPositionController
     joint: panda_joint7
-    pid: { p: 100, i: 0.1, d: 0 }
+    pid: { p: 170, i: 0.8, d: 5 }
   panda_finger_joint1_position_controller:
     type: effort_controllers/JointPositionController
     joint: panda_finger_joint1
-    pid: { p: 100, i: 0.1, d: 0 }
+    pid: { p: 170, i: 0.8, d: 5 }
   panda_finger_joint2_position_controller:
     type: effort_controllers/JointPositionController
     joint: panda_finger_joint2
-    pid: { p: 100, i: 0.1, d: 0 }
+    pid: { p: 170, i: 0.8, d: 5 }
+  camera_motion_joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: camera_motion_joint
+    pid: { p: 170, i: 0.8, d: 5 }
