@@ -2,7 +2,20 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
   <!-- Camera -->
-  <link name="camera_motion_link"/>
+  <link name="camera_phi_link">
+    <inertial>
+      <mass value="1" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.05" ixy="0" ixz="0" iyy="0.05" iyz="0" izz="0.05" />
+    </inertial>
+  </link>
+  <link name="camera_theta_link">
+    <inertial>
+      <mass value="1" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.05" ixy="0" ixz="0" iyy="0.05" iyz="0" izz="0.05" />
+    </inertial>
+  </link>
 
   <link name="camera_link">
     <collision>
@@ -27,18 +40,26 @@
     </inertial>
   </link>
 
-  <joint name="camera_motion_joint" type="revolute">
+  <joint name="camera_phi_joint" type="revolute">
     <axis xyz="0 0 1" />
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <parent link="world"/>
-    <child link="camera_motion_link"/>
+    <child link="camera_phi_link"/>
     <limit effort="87" lower="-3.14159" upper="3.14159" velocity="2.1750"/>
+  </joint>
+
+  <joint name="camera_theta_joint" type="revolute">
+    <axis xyz="0 1 0" />
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="camera_phi_link"/>
+    <child link="camera_theta_link"/>
+    <limit effort="87" lower="-1.570795" upper="0" velocity="2.1750"/>
   </joint>
 
   <joint name="camera_joint" type="fixed">
     <axis xyz="0 0 1" />
-    <origin xyz="2 0 0.5" rpy="0 0 ${PI}"/>
-    <parent link="camera_motion_link"/>
+    <origin xyz="2 0 0" rpy="0 0 ${PI}"/>
+    <parent link="camera_theta_link"/>
     <child link="camera_link"/>
   </joint>
   

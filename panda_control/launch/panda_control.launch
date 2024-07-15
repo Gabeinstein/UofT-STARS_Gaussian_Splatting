@@ -15,7 +15,8 @@
             panda_joint7_position_controller
             panda_finger_joint1_position_controller
             panda_finger_joint2_position_controller
-            camera_motion_joint_position_controller"/>
+            camera_phi_joint_position_controller
+            camera_theta_joint_position_controller"/>
 
   <!-- convert joint states to TF transforms for rviz, etc -->
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"

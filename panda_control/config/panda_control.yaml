@@ -39,7 +39,11 @@ panda:
     type: effort_controllers/JointPositionController
     joint: panda_finger_joint2
     pid: { p: 170, i: 0.8, d: 5 }
-  camera_motion_joint_position_controller:
+  camera_phi_joint_position_controller:
     type: effort_controllers/JointPositionController
-    joint: camera_motion_joint
+    joint: camera_phi_joint
+    pid: { p: 170, i: 0.8, d: 5 }
+  camera_theta_joint_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: camera_theta_joint
     pid: { p: 170, i: 0.8, d: 5 }
