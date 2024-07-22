@@ -10,7 +10,7 @@ import numpy as np
 import argparse
 import sys
 from std_msgs.msg import Float64
-
+import os 
 
 class dataAcquisitionService:
     def __init__(self, desired_link, camera_topic):
@@ -21,6 +21,7 @@ class dataAcquisitionService:
         parser.add_argument('mode', type=int,  help='display (1) or screenshot (0)')
         parser.add_argument('theta', type=int, help='int value (0-10) camera angle => -pi*input/20')
         parser.add_argument('shots', type=int, help='Number of shots')
+        parser.add_argument('output_path',type=str, help='Output photo path')
         self.args = parser.parse_args()
         
         rospy.init_node(self.args.node_name)
@@ -52,6 +53,10 @@ class dataAcquisitionService:
     def set_phi_camera_random(self):
         angle = np.random.uniform(-math.pi, math.pi)
         self.camera_phi_pub.publish(angle)
+
+    def screenshot(self, index):
+        path_name = self.args.output_path + str(index) + ".jpg"
+        cv2.imwrite(path_name,self.image_list[-1])
 
     def get_link_position(self):
         try:
@@ -85,7 +90,7 @@ class dataAcquisitionService:
                     self.set_phi_camera_random()
                     rospy.sleep(4)
                     print(f'shot {i}!')
-
+                    self.screenshot(i)
                 sys.exit(0)
 
 if __name__ == '__main__':

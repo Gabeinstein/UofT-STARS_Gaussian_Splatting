@@ -3,7 +3,7 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
     <link name="panda_link0">
     <inertial>
-      <mass value="1" />
+      <mass value="0.1" />
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <inertia ixx="0.05" ixy="0" ixz="0" iyy="0.05" iyz="0" izz="0.05" />
     </inertial>
@@ -22,7 +22,7 @@
 
   <link name="panda_link1">
     <inertial>
-      <mass value="1" />
+      <mass value="0.1" />
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <inertia ixx="0.05" ixy="0" ixz="0" iyy="0.05" iyz="0" izz="0.05" />
     </inertial>
@@ -52,7 +52,7 @@
 
   <link name="panda_link2">
     <inertial>
-      <mass value="1" />
+      <mass value="0.1" />
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <inertia ixx="0.05" ixy="0" ixz="0" iyy="0.05" iyz="0" izz="0.05" />
     </inertial>
@@ -82,7 +82,7 @@
 
   <link name="panda_link3">
     <inertial>
-      <mass value="1" />
+      <mass value="0.1" />
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <inertia ixx="0.05" ixy="0" ixz="0" iyy="0.05" iyz="0" izz="0.05" />
     </inertial>
@@ -112,7 +112,7 @@
 
   <link name="panda_link4">
     <inertial>
-      <mass value="1" />
+      <mass value="0.1" />
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <inertia ixx="0.05" ixy="0" ixz="0" iyy="0.05" iyz="0" izz="0.05" />
     </inertial>
@@ -142,7 +142,7 @@
 
   <link name="panda_link5">
     <inertial>
-      <mass value="1" />
+      <mass value="0.1" />
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <inertia ixx="0.05" ixy="0" ixz="0" iyy="0.05" iyz="0" izz="0.05" />
     </inertial>
@@ -172,7 +172,7 @@
 
   <link name="panda_link6">
     <inertial>
-      <mass value="1" />
+      <mass value="0.1" />
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <inertia ixx="0.05" ixy="0" ixz="0" iyy="0.05" iyz="0" izz="0.05" />
     </inertial>
@@ -202,7 +202,7 @@
 
   <link name="panda_link7">
     <inertial>
-      <mass value="1" />
+      <mass value="0.1" />
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <inertia ixx="0.05" ixy="0" ixz="0" iyy="0.05" iyz="0" izz="0.05" />
     </inertial>
@@ -241,7 +241,7 @@
 
   <link name="panda_hand">
     <inertial>
-      <mass value="1" />
+      <mass value="0.1" />
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <inertia ixx="0.05" ixy="0" ixz="0" iyy="0.05" iyz="0" izz="0.05" />
     </inertial>
@@ -268,7 +268,7 @@
 
   <link name="panda_leftfinger">
     <inertial>
-      <mass value="1" />
+      <mass value="0.1" />
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <inertia ixx="0.05" ixy="0" ixz="0" iyy="0.05" iyz="0" izz="0.05" />
     </inertial>
@@ -289,7 +289,7 @@
 
   <link name="panda_rightfinger">
     <inertial>
-      <mass value="1" />
+      <mass value="0.1" />
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <inertia ixx="0.05" ixy="0" ixz="0" iyy="0.05" iyz="0" izz="0.05" />
     </inertial>
