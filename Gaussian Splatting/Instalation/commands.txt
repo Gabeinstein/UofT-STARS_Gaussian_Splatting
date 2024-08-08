@@ -1,0 +1,99 @@
+Do not install Anaconda before Colmap
+
+Colmap pre install
+
+sudo apt-get install \
+    git \
+    cmake \
+    ninja-build \
+    build-essential \
+    libboost-program-options-dev \
+    libboost-filesystem-dev \
+    libboost-graph-dev \
+    libboost-system-dev \
+    libeigen3-dev \
+    libflann-dev \
+    libfreeimage-dev \
+    libmetis-dev \
+    libgoogle-glog-dev \
+    libgtest-dev \
+    libsqlite3-dev \
+    libglew-dev \
+    qtbase5-dev \
+    libqt5opengl5-dev \
+    libcgal-dev \
+    libceres-dev
+    
+cd ~
+git clone https://github.com/colmap/colmap.git
+cd colmap
+mkdir build
+cd build
+cmake .. -GNinja
+ninja
+sudo ninja install
+
+Run Colmap
+
+colmap gui
+
+Anaconda pre install
+
+sudo apt-get install libgl1-mesa-glx libegl1-mesa libxrandr2 libxrandr2 libxss1 libxcursor1 libxcomposite1 libasound2 libxi6 libxtst6
+
+Anaconda install: https://repo.anaconda.com/archive/Anaconda3-2024.06-1-Linux-x86_64.sh
+
+cd ~/Downloads
+curl -O https://repo.anaconda.com/archive/Anaconda3-2024.06-1-Linux-x86_64.sh
+bash ~/Downloads/Anaconda3-2024.06-1-Linux-x86_64.sh
+
+Yes to all
+
+CUDA toolkit -> install the same one of nvidia-smi
+
+wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-ubuntu2204.pin
+sudo mv cuda-ubuntu2204.pin /etc/apt/preferences.d/cuda-repository-pin-600
+wget https://developer.download.nvidia.com/compute/cuda/12.4.0/local_installers/cuda-repo-ubuntu2204-12-4-local_12.4.0-550.54.14-1_amd64.deb
+sudo dpkg -i cuda-repo-ubuntu2204-12-4-local_12.4.0-550.54.14-1_amd64.deb
+sudo cp /var/cuda-repo-ubuntu2204-12-4-local/cuda-*-keyring.gpg /usr/share/keyrings/
+sudo apt-get update
+sudo apt-get -y install cuda-toolkit-12-4
+
+CUDA env variables
+
+example <VERSION>: cuda-12.4
+
+export PATH=/usr/local/cuda-<VERSION>/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda-<VERSION>/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+export CUDA_HOME=/usr/local/cuda-<VERSION>
+
+GAUSSIAN SPLATTING
+
+cd <folder>
+git clone https://github.com/graphdeco-inria/gaussian-splatting --recursive
+cd gaussian-splatting/
+DISTUTILS_USE_SDK=1
+
+CONDA ENVIRONMENT
+
+conda create -n  gaussian_splatting
+conda activate gaussian_splatting
+conda config --add channels pytorch
+conda config --add conda-forge
+conda config --add defaults
+
+conda install conda-forge::plyfile
+conda install python=3.10
+conda install anaconda::pip
+conda install pytorch torchvision torchaudio pytorch-cuda=12.4 -c pytorch -c nvidia
+conda install conda-forge::tqdm
+
+export PATH=/usr/local/cuda-<VERSION>/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda-<VERSION>/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+export CUDA_HOME=/usr/local/cuda-<VERSION>
+
+pip install submodules/diff-gaussian-rasterization
+pip install submodules/simple-knn
+
+
+
