@@ -73,6 +73,10 @@ export PATH=/usr/local/cuda-<VERSION>/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/cuda-<VERSION>/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 export CUDA_HOME=/usr/local/cuda-<VERSION>
 
+sudo apt-get install -y \
+    nvidia-cuda-toolkit \
+    nvidia-cuda-toolkit-gcc
+
 //GAUSSIAN SPLATTING
 
 cd <folder>
